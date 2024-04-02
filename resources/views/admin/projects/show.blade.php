@@ -10,7 +10,7 @@
         <p class="fw-bold mb-0"> Tipo: <span class="fw-normal"> @if($project->type) {{$project->type?->label}} @else Nessuno @endif </span> </p>
       </div>
       <div class="col-md-4">
-        <img src="{{asset('storage/' . $project->preview_project)}}" class="img-fluid h-100 w-100" alt="{{$project->title}}">
+        <img src="{{asset('storage/' . $project->image)}}" class="img-fluid h-100 w-100" alt="{{$project->title}}">
       </div>
       <div class="col-md-8 d-flex flex-column">
         <div class="card-body">

@@ -51,9 +51,9 @@
             @enderror
         </div>
         <div class="col-5 mb-3">
-            <label for="preview_project" class="form-label @error('preview_project') is-invalid @elseif (old('preview_project', '')) @enderror">Anteprima Progetto</label>
-            <input type="file" class="form-control" id="preview_project" name="preview_project" value="{{ old('preview_project', $project->preview_project)}}">
-            @error('preview_project')
+            <label for="image" class="form-label @error('image') is-invalid @elseif (old('image', '')) @enderror">Anteprima Progetto</label>
+            <input type="file" class="form-control" id="image" name="image" value="{{ old('image', $project->image)}}">
+            @error('image')
                 <div class="invalid-feedback">
                     {{$message}}
                 </div>
@@ -64,8 +64,8 @@
             @enderror
         </div>
         <div class="col-1 align-self-center">
-            <img class="img-fluid" id="preview" src="{{old('preview_project', $project->preview_project)
-             ? asset('storage/' . old('preview_project', $project->preview_project))
+            <img class="img-fluid" id="preview" src="{{old('image', $project->image)
+             ? asset('storage/' . old('image', $project->image))
              : 'https://marcolanci.it/boolean/assets/placeholder.png' }}" alt="preview">
         </div>
         <div class="mb-2 col-12">

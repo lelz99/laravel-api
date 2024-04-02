@@ -35,7 +35,7 @@ class ProjectFactory extends Factory
             'title' => $title,
             'slug' => Str::slug($title),
             'description' => fake()->paragraphs(5, true),
-            'preview_project' => $img_url,
+            'image' => $img_url,
             'end_date' => fake()->date(),
             'is_published' => fake()->boolean(),
             'type_id' => Arr::random($types_ids)
@@ -44,9 +44,9 @@ class ProjectFactory extends Factory
 
     public function configure()
     {
-        return $this->afterCreating(function(Project $project){
+        return $this->afterCreating(function (Project $project) {
             $technology_ids = Technology::pluck('id')->toArray();
-            $project->technologies = array_filter($technology_ids, fn() => rand(0,1));
+            $project->technologies = array_filter($technology_ids, fn () => rand(0, 1));
             $project->technologies()->attach($project->technologies);
         });
     }
