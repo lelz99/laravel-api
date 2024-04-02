@@ -29,5 +29,3 @@ class Project extends Model
         return Attribute::make(fn ($value) => url("storage/$value"));
     }
 }
-
-// return Attribute::make(fn ($value) =>  $value && app('request')->is('api/*') ? url('storage/' . $value) : $value);
